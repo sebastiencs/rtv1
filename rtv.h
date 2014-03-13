@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Sun Mar  9 23:59:55 2014 chapui_s
-** Last update Mon Mar 10 23:23:15 2014 chapui_s
+** Last update Thu Mar 13 20:23:05 2014 chapui_s
 */
 
 #ifndef RTV_H_
@@ -34,27 +34,59 @@ typedef struct		s_infos_mlx
 
 typedef struct		s_points
 {
-  int			x_eye;
-  int			y_eye;
-  int			z_eye;
-  int			vect_x;
-  int			vect_y;
-  int			vect_z;
-  double		rot_x;
-  double		rot_y;
-  double		rot_z;
+  double		x_eye;
+  double		y_eye;
+  double		z_eye;
+  double		angle_x_eye;
+  double		angle_y_eye;
+  double		angle_z_eye;
+  double		vect_x;
+  double		vect_y;
+  double		vect_z;
+  double		x_sphere;
+  double		y_sphere;
+  double		z_sphere;
+  double		angle_x_sphere;
+  double		angle_y_sphere;
+  double		angle_z_sphere;
+  double		radius_sphere;
+  double		x_plan;
+  double		y_plan;
+  double		z_plan;
+  double		angle_x_plan;
+  double		angle_y_plan;
+  double		angle_z_plan;
 }			t_points;
+
+typedef struct		s_eye_virt
+{
+  double		x_eye;
+  double		y_eye;
+  double		z_eye;
+  double		angle_x_eye;
+  double		angle_y_eye;
+  double		angle_z_eye;
+  double		vect_x;
+  double		vect_y;
+  double		vect_z;
+}			t_eye_virt;
 
 typedef struct		s_inter
 {
   double		sphere_one;
   double		sphere_two;
+  double		sphere_point_x;
+  double		sphere_point_y;
+  double		sphere_point_z;
+  double		sphere_normal_x;
+  double		sphere_normal_y;
+  double		sphere_normal_z;
   double		plan;
 }			t_inter;
 
 # define HEIGHT			(600)
 # define WIDTH			(800)
-# define DIST_EYE_TO_IMG	100
+# define DIST_EYE_TO_IMG	300
 # define DEG_TO_RAD(x)		(x * (M_PI/180))
 # define ALLOC_ERROR		"error: could not alloc\n"
 # define MLX_ERROR		"error: could not open window\n"
@@ -69,10 +101,22 @@ void		my_pixel_put_to_image(int x, int y,
 				      unsigned int color,
 				      t_infos_mlx *infos_mlx);
 int		my_putstr(char *str);
-double		sphere(t_points *pts, t_inter *inter);
-double		plan(t_points *pts, t_inter *inter);
-void		rotate_z(t_points *pts, double angle);
-void		rotate_x(t_points *pts, double angle);
-void		rotate_y(t_points *pts, double angle);
+void		sphere(t_points *pts,
+		       t_inter *inter,
+		       t_eye_virt *virt,
+		       double delta);
+double		plan(t_points *pts, t_inter *inter, t_eye_virt *vrt);
+void		rotate_x(double *x,
+			 double *y,
+			 double *z,
+			 double angle);
+void		rotate_y(double *x,
+			 double *y,
+			 double *z,
+			 double angle);
+void		rotate_z(double *x,
+			 double *y,
+			 double *z,
+			 double angle);
 
 #endif /* !RTV_H_ */
