@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 10 00:02:05 2014 chapui_s
-** Last update Sat Mar 15 18:33:53 2014 chapui_s
+** Last update Sun Mar 16 13:12:37 2014 chapui_s
 */
 
 #include <math.h>
@@ -35,10 +35,10 @@ static t_infos_mlx	*init_infos_mlx(void)
   return (infos_mlx);
 }
 
-unsigned int	calc_img(t_points *points, t_spot *spot)
+static unsigned int	calc_img(t_points *points, t_spot *spot)
 {
-  t_inter	inter;
-  t_eye_virt	virt;
+  t_inter		inter;
+  t_eye_virt		virt;
 
   sphere(points, &inter, &virt, 0);
   plan(points, &inter, &virt);
@@ -47,7 +47,7 @@ unsigned int	calc_img(t_points *points, t_spot *spot)
   return (get_color_pixel(&inter, spot, points));
 }
 
-int		make_graph(t_infos_mlx *infos_mlx,
+static int	make_graph(t_infos_mlx *infos_mlx,
 			   t_points *points,
 			   t_spot *spot)
 {
@@ -73,7 +73,7 @@ int		make_graph(t_infos_mlx *infos_mlx,
   return (0);
 }
 
-void	init_objs(t_points *points)
+static void	init_objs(t_points *points)
 {
   init_sphere(points);
   init_cone(points);

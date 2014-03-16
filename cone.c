@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 14 11:10:03 2014 chapui_s
-** Last update Sun Mar 16 13:08:38 2014 chapui_s
+** Last update Sun Mar 16 13:10:11 2014 chapui_s
 */
 
 #include <math.h>
@@ -42,7 +42,8 @@ static void	apply_characteristics_cone(t_inter *inter,
   inter->cone_point_z = pts->z_eye + *cone * pts->vect_z;
   inter->cone_normal_x = inter->cone_point_x - pts->x_cone;
   inter->cone_normal_y = inter->cone_point_y - pts->y_cone;
-  inter->cone_normal_z = -(tan(pts->angle_cone * M_PI / 180)) * inter->cone_point_z - pts->z_cone;
+  inter->cone_normal_z = -(tan(pts->angle_cone * M_PI / 180))
+    * inter->cone_point_z - pts->z_cone;
 }
 
 static void	get_inter_cone(t_inter *inter,
