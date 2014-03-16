@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 14 11:10:03 2014 chapui_s
-** Last update Sun Mar 16 12:59:24 2014 chapui_s
+** Last update Sun Mar 16 13:08:38 2014 chapui_s
 */
 
 #include <math.h>
@@ -57,7 +57,7 @@ static void	get_inter_cone(t_inter *inter,
   }
   if (delta > 0)
     inter->cone_two = (-b + sqrt(delta)) / (2.0 * a);
-  if (inter->cone_two < inter->cone_one || inter->cone_one < 0)
+  if (inter->cone_two > 0 && inter->cone_two < inter->cone_one)
     inter->cone_one = inter->cone_two;
 }
 

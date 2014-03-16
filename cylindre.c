@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 14 19:50:49 2014 chapui_s
-** Last update Sun Mar 16 13:01:35 2014 chapui_s
+** Last update Sun Mar 16 13:09:11 2014 chapui_s
 */
 
 #include <math.h>
@@ -58,7 +58,7 @@ static void	get_inter_cylindre(t_inter *inter,
   }
   if (delta > 0)
     inter->cylindre_two = (-b + sqrt(delta)) / (2.0 * a);
-  if (inter->cylindre_two < inter->cylindre_one || inter->cylindre_one < 0)
+  if (inter->cylindre_two > 0 &&  inter->cylindre_two < inter->cylindre_one)
     inter->cylindre_one = inter->cylindre_two;
 }
 

@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 10 19:32:25 2014 chapui_s
-** Last update Sun Mar 16 13:05:26 2014 chapui_s
+** Last update Sun Mar 16 13:08:18 2014 chapui_s
 */
 
 #include <math.h>
@@ -63,6 +63,8 @@ static void	get_inter_sphere(t_inter *inter,
   }
   if (delta > 0)
     inter->sphere_two = (-b + sqrt(delta)) / (2.0 * a);
+  if (inter->sphere_two > 0 && inter->sphere_two < inter->sphere_one)
+    inter->sphere_one = inter->sphere_two;
 }
 
 double		sphere(t_points *pts,
