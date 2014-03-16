@@ -5,17 +5,25 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Mon Mar 10 00:02:42 2014 chapui_s
-## Last update Wed Mar 12 20:00:25 2014 chapui_s
+## Last update Sun Mar 16 12:43:29 2014 chapui_s
 ##
 
 SRC	= main.c \
 	  my_puts.c \
 	  events.c \
 	  print_line.c \
-	  utils.c \
 	  sphere.c \
 	  plan.c \
-	  rotate.c
+	  rotate.c \
+	  cone.c \
+	  cylindre.c \
+	  get_cos_a.c \
+	  get_color_obj.c \
+	  init_obj.c \
+	  is_shadow.c \
+	  prepare_shadow.c \
+	  luminosity.c \
+	  shadow.c
 
 NAME	= rtv1
 
