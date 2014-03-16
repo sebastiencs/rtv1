@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Mon Mar 10 00:02:42 2014 chapui_s
-## Last update Sun Mar 16 12:43:29 2014 chapui_s
+## Last update Sun Mar 16 13:24:48 2014 chapui_s
 ##
 
 SRC	= main.c \
@@ -27,7 +27,7 @@ SRC	= main.c \
 
 NAME	= rtv1
 
-CFLAGS	= -lmlx -lXext -lX11 -I /usr/include/X11 -lm -Wall -Wextra -g
+CFLAGS	= -lmlx -lXext -lX11 -I /usr/include/X11 -lm
 
 OBJ	= $(SRC:.c=.o)
 
